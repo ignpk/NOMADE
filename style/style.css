@@ -1,0 +1,185 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-image: url(../assets/background.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 65, 21);
+}
+
+/* HEADER: logo + texto/menú, siempre centrado */
+.header {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 400px;
+    height: 110px;
+    background-image: url(../assets/LOGONOMBRE.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.textomenu {
+    width: 40%;
+    height: auto;
+    text-align: center;
+    font-size: 90%;
+}
+
+.menu {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+}
+
+.menu a {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 180%;
+    color: rgb(132, 134, 251);
+    transition: 0.5s ease-in-out;
+}
+
+.menu a:hover {
+    color: rgb(255, 179, 0);
+    text-decoration: underline;
+}
+
+/* GALERÍA: aparece debajo del header */
+.galeriacontainer {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    transform: translateY(-10%);
+
+}
+
+.obra {
+    width: 400px;
+    height: 400px;
+        overflow: hidden;
+            position: relative;   
+}
+.obra img {
+    width: 100%;
+    height: auto;
+    display: block;   
+}
+/* overlay oscuro con el texto */
+.obra::after {
+    content: attr(data-titulo);   /* toma el texto del atributo data-titulo */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.682);
+    color: white;
+    font-size: 110%;
+    opacity: 0;
+    transition: 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.obra:hover::after {
+    opacity: 1;
+}
+
+
+
+@media (max-width: 400px) {
+
+
+    .logo {
+    width: 200px;
+    height: 90px;
+    background-image: url(../assets/LOGONOMBRE.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.textomenu {
+    width: 80%;
+    height: auto;
+    text-align: center;
+    font-size: 70%;
+}
+.galeriacontainer {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    transform: translateY(-15%);
+
+}
+.obra {
+    width: 150px;
+    height: 150px;
+        overflow: hidden;
+            position: relative;   
+}
+.textomenu {
+    width: 80%;
+    height: auto;
+    text-align: center;
+    font-size: 60%;
+}
+.menu {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+}
+
+.menu a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 110%;
+    color: rgb(132, 134, 251);
+    transition: 0.5s ease-in-out;
+}
+}
