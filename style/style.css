@@ -84,6 +84,7 @@ body {
 .menu a:hover {
     color: rgb(255, 179, 0);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* GALERÍA: aparece debajo del header */
